@@ -171,9 +171,8 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                 details = stats.get(items)
                 title = (details["title"][:35]).title()
                 if items == "telegram":
-                    msg += f"🌹 [ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Best_FriendsFor_Ever) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
-                else:
-                    msg += f"🌹 [{title}](https://www.youtube.com/watch?v={items}) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                    
+                    msg += f" [{title}](https://www.youtube.com/watch?v={items}) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
 
             temp = (
                 _["gstats_4"].format(
@@ -211,7 +210,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
             except:
                 continue
             limit += 1
-            msg += f"💖 `{extract}` ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs ᴏɴ ʙᴏᴛ.\n\n"
+            msg += f"`{extract}` Played {count} Times on Bot.\n\n"
         temp = (
             _["gstats_5"].format(limit, MUSIC_BOT_NAME)
             if what == "Chats"
@@ -257,23 +256,23 @@ async def overall_stats(client, CallbackQuery, _):
     else:
         ass = "No"
     cm = config.CLEANMODE_DELETE_MINS
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""**Bots Stats and info:**
 
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+**Modules:** {mod}
+**Chats:** {served_chats} 
+**Users:** {served_users} 
+**Blocked:** {blocked} 
+**SudoUsr:** {sudoers} 
     
-🌹 **ǫᴜᴇʀɪᴇs:** {total_queries} 
-🌹 **ᴀssɪsᴛᴀɴᴛs:** {assistant}
-🌹 **ᴀss ᴀᴜᴛᴏ ʟᴇᴀᴠᴇ:** {ass}
-🌹 **ᴄʟᴇᴀɴᴍᴏᴅᴇ:** {cm} ᴍɪɴᴜᴛᴇs
+**Queries:** {total_queries} 
+**Assistant:** {assistant}
+**ASs auto leave:** {ass}
+**Cleanmode:** {cm} ᴍɪɴᴜᴛᴇs
 
-🌹 **ᴅᴜʀᴀᴛɪᴏɴ ʟɪᴍɪᴛ:** {play_duration} ᴍɪɴᴜᴛᴇs
-🌹 **ᴅᴏᴡɴʟᴏᴀᴅ ʟɪᴍɪᴛ:** {song} ᴍɪɴᴜᴛᴇs
-🌹 **ᴩʟᴀʏʟɪsᴛ ʟɪᴍɪᴛ:** {playlist_limit}
-🌹 **ᴩʟᴀʏʟɪsᴛ ᴩʟᴀʏ ʟɪᴍɪᴛ:** {fetch_playlist}"""
+**Duration limit:** {play_duration} ᴍɪɴᴜᴛᴇs
+**Download limit:** {song} ᴍɪɴᴜᴛᴇs
+**Playlist limit:** {playlist_limit}
+**Playlist play limit:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
@@ -335,40 +334,40 @@ async def overall_stats(client, CallbackQuery, _):
     total_queries = await get_queries()
     blocked = len(BANNED_USERS)
     sudoers = len(await get_sudoers())
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""**ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
 
-       <b><u>🌹 ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴩʟᴀᴛғᴏʀᴍ:** {sc}
-🌹 **ʀᴀᴍ:** {ram}
-🌹 **ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
-🌹 **ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
-🌹 **ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
+       <b><u> ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
+ **ᴍᴏᴅᴜʟᴇs:** {mod}
+ **ᴩʟᴀᴛғᴏʀᴍ:** {sc}
+ **ʀᴀᴍ:** {ram}
+ **ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
+ **ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
+ **ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
 
-       <b><u>🌹 sᴏғᴛᴡᴀʀᴇ</b><u/>
-🌹 **ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-🌹 **ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
-🌹 **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
+       <b><u> sᴏғᴛᴡᴀʀᴇ</b><u/>
+ **ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
+ **ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
+ **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
 
-        <b><u>🌹 sᴛᴏʀᴀɢᴇ</b><u/>
-🌹 **ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
-🌹 **ᴜsᴇᴅ:** {used[:4]} GiB
-🌹 **ғʀᴇᴇ:** {free[:4]} GiB
+        <b><u> sᴛᴏʀᴀɢᴇ</b><u/>
+ **ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
+ **ᴜsᴇᴅ:** {used[:4]} GiB
+ **ғʀᴇᴇ:** {free[:4]} GiB
 
-      <b><u>🌹 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+      <b><u> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
+ **ᴄʜᴀᴛs:** {served_chats} 
+ **ᴜsᴇʀs:** {served_users} 
+ **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
+ **sᴜᴅᴏᴇʀs:** {sudoers} 
 
-      <b><u>🌹 ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
-🌹 **ᴜᴩᴛɪᴍᴇ:** {mongouptime[:4]} ᴅᴀʏs
-🌹 **sɪᴢᴇ:** {datasize[:6]} ᴍʙ
-🌹 **sᴛᴏʀᴀɢᴇ:** {storage} ᴍʙ
-🌹 **ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
-🌹 **ᴋᴇʏs:** {objects}
-🌹 **ǫᴜᴇʀɪᴇs:** `{query}`
-🌹 **ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries}`
+      <b><u> ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
+ **ᴜᴩᴛɪᴍᴇ:** {mongouptime[:4]} ᴅᴀʏs
+ **sɪᴢᴇ:** {datasize[:6]} ᴍʙ
+ **sᴛᴏʀᴀɢᴇ:** {storage} ᴍʙ
+ **ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
+ **ᴋᴇʏs:** {objects}
+ **ǫᴜᴇʀɪᴇs:** `{query}`
+ **ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries}`
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
