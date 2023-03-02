@@ -15,37 +15,37 @@ def lanuages_keyboard(_):
     keyboard = InlineKeyboard(row_width=2)
     keyboard.row(
         InlineKeyboardButton(
-            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺",
+            text="English",
             callback_data=f"languages:en",
         ),
         InlineKeyboardButton(
-            text="🇮🇳 हिन्दी 🇮🇳",
+            text="हिन्दी",
             callback_data=f"languages:hi",
         ),
     )
     keyboard.row(
         InlineKeyboardButton(
-            text="🇱🇰 සිංහල 🇱🇰",
+            text="සිංහල",
             callback_data=f"languages:si",
         ),
         InlineKeyboardButton(
-            text="🇦🇿 Azərbaycan 🇦🇿",
+            text="Azərbaycan",
             callback_data=f"languages:az",
         ),
     )
     keyboard.row(
         InlineKeyboardButton(
-            text="🇮🇳 ગુજરાતી 🇮🇳",
+            text="ગુજરાતી",
             callback_data=f"languages:gu",
         ),
         InlineKeyboardButton(
-            text="🇹🇷 Türkiye Türkçesi 🇹🇷",
+            text="Türkiye Türkçesi",
             callback_data=f"languages:tr",
         ),
     )
     keyboard.row(
         InlineKeyboardButton(
-            text="🐕 ᴄʜᴇᴇᴍs 🐕",
+            text="Cheems",
             callback_data=f"languages:cheems",
         ),
     )
